@@ -6,6 +6,8 @@ import { Box } from "../styles/box";
 import { Flex } from "../styles/flex";
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import Mock1 from "../../public/mock1.png";
+import Mock2 from "../../public/mock2.png";
 
 export const Hero = () => {
   const [loading, setLoading] = useState(false);
@@ -233,9 +235,21 @@ export const Hero = () => {
           }}
         >
           {theme === "light" ? (
-            <Image alt="" style={{ borderRadius: "10px" }} src="mock2.png" />
+            <Image
+              alt=""
+              style={{ borderRadius: "10px" }}
+              height={400}
+              width={200000}
+              src={Mock2}
+            />
           ) : (
-            <Image alt="" style={{ borderRadius: "10px" }} src="mock1.png" />
+            <Image
+              alt=""
+              style={{ borderRadius: "10px" }}
+              height={400}
+              width={200000}
+              src={Mock1}
+            />
           )}
         </Box>
       </Flex>

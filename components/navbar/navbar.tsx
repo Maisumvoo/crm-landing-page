@@ -19,7 +19,7 @@ import Logo2 from "../../public/crmuv2.png";
 
 export const Nav = () => {
   const { setTheme } = useNextTheme();
-  const { isDark, type, theme } = useTheme();
+  const { isDark, type } = useTheme();
   const collapseItems = [
     "Features",
     "Customers",
@@ -49,7 +49,7 @@ export const Nav = () => {
     >
       <Navbar.Brand>
         <Navbar.Toggle aria-label="toggle navigation" showIn="xs" />
-        {theme === "light" ? (
+        {!isDark ? (
           <Image width={120} height={40} src={Logo} alt="logo" />
         ) : (
           <Image width={120} height={40} src={Logo2} alt="logo" />

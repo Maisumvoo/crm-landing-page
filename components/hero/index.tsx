@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { CheckIcon } from "../icons/CheckIcon";
 import { Box } from "../styles/box";
 import { Flex } from "../styles/flex";
-import { useTheme } from "next-themes";
+import { useTheme } from "@nextui-org/react";
 import Image from "next/image";
 import Mock1 from "../../public/mock1.png";
 import Mock2 from "../../public/mock2.png";
@@ -13,7 +13,7 @@ export const Hero = () => {
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [success, setSuccess] = useState(false);
-  const { theme } = useTheme();
+  const { isDark } = useTheme();
 
   const handleSubmit = async () => {
     if (!email || email === "") return;
@@ -234,7 +234,7 @@ export const Hero = () => {
             },
           }}
         >
-          {theme === "light" ? (
+          {!isDark ? (
             <Image
               alt=""
               style={{ borderRadius: "10px" }}

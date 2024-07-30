@@ -5,6 +5,7 @@ import { CheckIcon } from "../icons/CheckIcon";
 import { Box } from "../styles/box";
 import { Flex } from "../styles/flex";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 
 export const Hero = () => {
   const [loading, setLoading] = useState(false);
@@ -232,9 +233,9 @@ export const Hero = () => {
           }}
         >
           {theme === "light" ? (
-            <img style={{ borderRadius: "10px" }} src="mock2.png" />
+            <Image alt="" style={{ borderRadius: "10px" }} src="mock2.png" />
           ) : (
-            <img style={{ borderRadius: "10px" }} src="mock1.png" />
+            <Image alt="" style={{ borderRadius: "10px" }} src="mock1.png" />
           )}
         </Box>
       </Flex>

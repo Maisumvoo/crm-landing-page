@@ -45,6 +45,7 @@ export const Footer = () => {
               <Box as={"li"}>
                 <Text span css={{ color: "$accents8" }}>
                   <a
+                    rel="noreferrer"
                     style={{ color: "#687076" }}
                     target="_blank"
                     href="https://www.instagram.com/maisumvoo/"
@@ -56,6 +57,7 @@ export const Footer = () => {
               <Box as={"li"}>
                 <Text span css={{ color: "$accents8" }}>
                   <a
+                    rel="noreferrer"
                     style={{ color: "#687076" }}
                     target="_blank"
                     href="https://www.facebook.com/profile.php?id=61552541667107&is_tour_completed=true"
@@ -67,6 +69,7 @@ export const Footer = () => {
               <Box as={"li"}>
                 <Text span css={{ color: "$accents8" }}>
                   <a
+                    rel="noreferrer"
                     style={{ color: "#687076" }}
                     target="_blank"
                     href="https://www.tiktok.com/@maisumvoo"

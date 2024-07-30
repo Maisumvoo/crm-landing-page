@@ -15,10 +15,11 @@ import { useTheme } from "@nextui-org/react";
 import { GithubIcon } from "../icons/GithubIcon";
 import Image from "next/image";
 import Logo from "../../public/crmuv.png";
+import Logo2 from "../../public/crmuv2.png";
 
 export const Nav = () => {
   const { setTheme } = useNextTheme();
-  const { isDark, type } = useTheme();
+  const { isDark, type, theme } = useTheme();
   const collapseItems = [
     "Features",
     "Customers",
@@ -48,7 +49,11 @@ export const Nav = () => {
     >
       <Navbar.Brand>
         <Navbar.Toggle aria-label="toggle navigation" showIn="xs" />
-        <Image width={120} height={40} src={Logo} alt="logo" />
+        {theme === "light" ? (
+          <Image width={120} height={40} src={Logo} alt="logo" />
+        ) : (
+          <Image width={120} height={40} src={Logo2} alt="logo" />
+        )}
 
         <Navbar.Content
           hideIn="sm"

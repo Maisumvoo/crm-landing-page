@@ -142,7 +142,7 @@ export const Footer = () => {
               }}
             >
               <Text span css={{ color: "$accents8" }}>
-                © Copyright 2024 MUV Inc.
+                © Copyright 2024 MUV Inc. 53.697.155/0001-95
               </Text>
             </Flex>
           </Flex>

@@ -16,7 +16,14 @@ export const Faq = () => {
         direction={"column"}
       >
         <Flex align={"center"} direction={"column"}>
-          <Text span css={{ color: "$blue600" }}>
+          <Text
+            style={{
+              fontSize: "26px",
+              marginBottom: "30px",
+            }}
+            span
+            css={{ color: "$blue600" }}
+          >
             FAQ
           </Text>
           <Text h2>Você tem alguma dúvida?</Text>

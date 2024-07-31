@@ -27,7 +27,14 @@ export const Features2 = () => {
         }}
       >
         <Flex direction="column" align={"center"}>
-          <Text span css={{ color: "$blue600" }}>
+          <Text
+            style={{
+              fontSize: "26px",
+              marginBottom: "30px",
+            }}
+            span
+            css={{ color: "$blue600" }}
+          >
             Sua Clínica passa por Isso? Descubra se o CRMUV é para você
           </Text>
           <Text h3>CRMUV</Text>

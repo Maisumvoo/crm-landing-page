@@ -74,26 +74,34 @@ export const Hero = () => {
               css={{
                 display: "inline",
               }}
-            >
-              Transforme o Faturamento da sua Clínica{" "}
-            </Text>
-            <Text
-              h1
               color="primary"
-              css={{
-                display: "inline",
-              }}
             >
-              com{" "}
+              Transforme{" "}
             </Text>
             <Text
               h1
               css={{
                 display: "inline",
               }}
+            >
+              o Faturamento da sua Clínica{" "}
+            </Text>
+            <Text
+              h1
+              css={{
+                display: "inline",
+              }}
+            >
+              com o{" "}
+            </Text>
+            <Text
+              h1
+              css={{
+                display: "inline",
+              }}
               color="primary"
             >
-              o CRMUV
+              CRMUV
             </Text>
           </Box>
 

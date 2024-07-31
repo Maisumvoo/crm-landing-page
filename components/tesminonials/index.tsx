@@ -157,7 +157,14 @@ export const Testimonials = () => {
             },
           }}
         >
-          <Text span css={{ color: "$blue600" }}>
+          <Text
+            style={{
+              fontSize: "26px",
+              marginBottom: "30px",
+            }}
+            span
+            css={{ color: "$blue600" }}
+          >
             O que Nossos Clientes Dizem
           </Text>
           <Text h3>Depoimentos</Text>

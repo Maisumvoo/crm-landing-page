@@ -6,7 +6,7 @@ import {
   Switch,
   Text,
 } from "@nextui-org/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ModalLogin } from "../modal";
 import { icons } from "./icons";
 import { AcmeLogo } from "./logo";
@@ -16,16 +16,34 @@ import { GithubIcon } from "../icons/GithubIcon";
 import Image from "next/image";
 import Logo from "../../public/crmuv.png";
 import Logo2 from "../../public/crmuv2.png";
+import { useResize } from "@nextui-org/react";
 
 export const Nav = () => {
   const { setTheme } = useNextTheme();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   const { isDark, type } = useTheme();
   const collapseItems = [
-    "Features",
-    "Customers",
-    "Pricing",
-    "Company",
-    "Legal",
+    { label: "Funcionalidades", name: "funcionalidades" },
+    { label: "Depoimentos", name: "depoimentos" },
+    { label: "Planos e Preços", name: "plans" },
+    { label: "Contato", name: "contact" },
+    { label: "FAQ", name: "faq" },
   ];
 
   const scrollToElement = (id: string) => {
@@ -50,9 +68,21 @@ export const Nav = () => {
       <Navbar.Brand>
         <Navbar.Toggle aria-label="toggle navigation" showIn="xs" />
         {!isDark ? (
-          <Image width={120} height={40} src={Logo} alt="logo" />
+          <Image
+            style={{ marginLeft: "20px" }}
+            width={120}
+            height={40}
+            src={Logo}
+            alt="logo"
+          />
         ) : (
-          <Image width={120} height={40} src={Logo2} alt="logo" />
+          <Image
+            style={{ marginLeft: "20px" }}
+            width={120}
+            height={40}
+            src={Logo2}
+            alt="logo"
+          />
         )}
 
         <Navbar.Content
@@ -156,30 +186,55 @@ export const Nav = () => {
         </Navbar.Content>
       </Navbar.Brand>
 
-      <Navbar.Collapse>
+      <Navbar.Collapse
+        // isOpen={isOpen}
+        onClick={() => setIsOpen((state) => !state)}
+      >
         {collapseItems.map((item, index) => (
-          <Navbar.CollapseItem key={item}>
-            <Link
-              color="inherit"
-              css={{
-                minWidth: "100%",
-              }}
-              href="#"
-            >
-              {item}
-            </Link>
+          <Navbar.CollapseItem key={item.label}>
+            <Navbar.Toggle>
+              <Link
+                color="inherit"
+                onClick={() => {
+                  setIsOpen(false);
+                  scrollToElement(item.name);
+                }}
+                css={{
+                  minWidth: "100%",
+                }}
+                href="#"
+              >
+                {item.label}
+              </Link>
+            </Navbar.Toggle>
           </Navbar.CollapseItem>
         ))}
         <Navbar.CollapseItem>
           <Link
             color="inherit"
-            css={{
-              minWidth: "100%",
-            }}
             target="_blank"
-            href="https://github.com/Siumauricio/landing-template-nextui"
+            href="https://wa.me/5511991554329?text=Quero%20saber%20mais%20sobre%20o%20CRMUV!"
           >
-            <GithubIcon />
+            <svg
+              className="w-6 h-6 text-gray-800 dark:text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M12 4a8 8 0 0 0-6.895 12.06l.569.718-.697 2.359 2.32-.648.379.243A8 8 0 1 0 12 4ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.96 9.96 0 0 1-5.016-1.347l-4.948 1.382 1.426-4.829-.006-.007-.033-.055A9.958 9.958 0 0 1 2 12Z"
+                clip-rule="evenodd"
+              />
+              <path
+                fill="currentColor"
+                d="M16.735 13.492c-.038-.018-1.497-.736-1.756-.83a1.008 1.008 0 0 0-.34-.075c-.196 0-.362.098-.49.291-.146.217-.587.732-.723.886-.018.02-.042.045-.057.045-.013 0-.239-.093-.307-.123-1.564-.68-2.751-2.313-2.914-2.589-.023-.04-.024-.057-.024-.057.005-.021.058-.074.085-.101.08-.079.166-.182.249-.283l.117-.14c.121-.14.175-.25.237-.375l.033-.066a.68.68 0 0 0-.02-.64c-.034-.069-.65-1.555-.715-1.711-.158-.377-.366-.552-.655-.552-.027 0 0 0-.112.005-.137.005-.883.104-1.213.311-.35.22-.94.924-.94 2.16 0 1.112.705 2.162 1.008 2.561l.041.06c1.161 1.695 2.608 2.951 4.074 3.537 1.412.564 2.081.63 2.461.63.16 0 .288-.013.4-.024l.072-.007c.488-.043 1.56-.599 1.804-1.276.192-.534.243-1.117.115-1.329-.088-.144-.239-.216-.43-.308Z"
+              />
+            </svg>
           </Link>
         </Navbar.CollapseItem>
         <Navbar.CollapseItem>
@@ -193,7 +248,7 @@ export const Nav = () => {
         <Navbar.Item>
           <Button auto flat>
             <a href="https://wa.me/5511991554329?text=Quero%20agendar%20uma%20reuni%C3%A3o%20para%20falar%20sobre%20o%20CRMUV!">
-              Agende uma demonstração
+              {isMobile ? "Experimentar" : "Agende uma demonstração"}
             </a>
           </Button>
         </Navbar.Item>

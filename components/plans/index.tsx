@@ -16,7 +16,14 @@ export const Plans = () => {
         align={"center"}
       >
         <Flex direction={"column"} align={"center"}>
-          <Text span css={{ color: "$blue600" }}>
+          <Text
+            style={{
+              fontSize: "26px",
+              marginBottom: "30px",
+            }}
+            span
+            css={{ color: "$blue600" }}
+          >
             Explore Nossos Planos
           </Text>
           <Text h2>Planos transparentes</Text>

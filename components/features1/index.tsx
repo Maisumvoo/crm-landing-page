@@ -27,7 +27,14 @@ export const Features1 = () => {
         }}
       >
         <Flex direction="column">
-          <Text span css={{ color: "$blue600" }}>
+          <Text
+            style={{
+              fontSize: "26px",
+              marginBottom: "30px",
+            }}
+            span
+            css={{ color: "$blue600" }}
+          >
             Por que o CRMUV é a Melhor Escolha para sua Clínica?
           </Text>
           <Text h3>Automatização Inteligente de Leads</Text>

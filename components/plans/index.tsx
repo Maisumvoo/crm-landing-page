@@ -53,7 +53,7 @@ export const Plans = () => {
             </Card.Header>
             <Card.Body css={{ py: "$4" }}>
               <Text css={{ display: "contents" }} h2>
-                R$ 320
+                R$ 299
               </Text>
               <Text css={{ display: "contents", color: "$accents8" }}>
                 {" "}
@@ -73,7 +73,7 @@ export const Plans = () => {
                 <Flex as={"li"} css={{ py: "$2", gap: "$2" }} align={"center"}>
                   <CheckIcon />
                   <Text span css={{ color: "$accents8" }}>
-                    Até 2 usuários
+                    Até 3 usuários
                   </Text>
                 </Flex>
                 <Flex as={"li"} css={{ py: "$2", gap: "$2" }} align={"center"}>
@@ -105,7 +105,7 @@ export const Plans = () => {
             </Card.Header>
             <Card.Body css={{ py: "$4" }}>
               <Text css={{ display: "contents" }} h2>
-                R$ 500
+                R$ 499
               </Text>
               <Text css={{ display: "contents", color: "$accents8" }}>
                 {" "}
@@ -163,7 +163,7 @@ export const Plans = () => {
             </Card.Header>
             <Card.Body css={{ py: "$4" }}>
               <Text css={{ display: "contents" }} h2>
-                R$ 800
+                R$ 649
               </Text>
               <Text css={{ display: "contents", color: "$accents8" }}>
                 {" "}
@@ -225,8 +225,7 @@ export const Plans = () => {
                 </Grid>
                 <Grid xs={12}>
                   <Text css={{ color: "$accents8" }}>
-                    Expanda as fronteiras de seu negócio com recursos ilimitados
-                    e personalização avançada.
+                    Customize seu negócio.
                   </Text>
                 </Grid>
               </Grid.Container>
